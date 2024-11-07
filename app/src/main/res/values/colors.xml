@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="player1_primary">#03A9F4</color>
+    <color name="player2_primary">#FF5722</color>
+    <color name="player1_secondary">#0363F4</color>
+    <color name="player2_secondary">#FB9862</color>
+
+    <color name="success">#54CC14</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
 </resources>
