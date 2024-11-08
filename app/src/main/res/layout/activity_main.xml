@@ -17,16 +17,41 @@
         app:layout_constraintRight_toRightOf="parent">
 
         <TextView
-            android:id="@+id/textview_primary"
+            android:id="@+id/textview_primary_minute"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:rotation="180"
-            android:text="@string/primary_time"
+            android:text="@string/time_minute_default"
             android:textColor="@color/player1_secondary"
-            android:textSize="80sp"
+            android:textSize="60sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textview_primary_colon_label"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textview_primary_colon_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:rotation="180"
+            android:text="@string/time_colon"
+            android:textColor="@color/player1_secondary"
+            android:textSize="60sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textview_primary_second"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:rotation="180"
+            android:text="@string/time_second_default"
+            android:textColor="@color/player1_secondary"
+            android:textSize="60sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textview_primary_colon_label"
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -43,27 +68,50 @@
         app:layout_constraintTop_toBottomOf="@+id/constraint_primary">
 
         <TextView
-            android:id="@+id/textview_secondary"
+            android:id="@+id/textview_secondary_minute"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@string/time_minute_default"
             android:textColor="@color/player2_secondary"
-            android:text="@string/secondary_time"
-            android:textSize="80sp"
+            android:textSize="60sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textview_secondary_colon_label"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textview_secondary_colon_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/time_colon"
+            android:textColor="@color/player2_secondary"
+            android:textSize="60sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textview_secondary_second"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/time_second_default"
+            android:textColor="@color/player2_secondary"
+            android:textSize="60sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textview_secondary_colon_label"
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
         android:id="@+id/button_go"
-        android:layout_width="100sp"
-        android:layout_height="100sp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:text="@string/button_go"
-        android:backgroundTint="@color/white"
-        android:textColor="@color/black"
-        android:textSize="32sp"
+        android:backgroundTint="@color/ternary"
+        android:textColor="@color/white"
+        android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="@+id/constraint_secondary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
