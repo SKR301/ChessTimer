@@ -7,17 +7,17 @@
     tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraint_primary"
+        android:id="@+id/constraint_player1"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@color/player1_primary"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/constraint_secondary"
+        app:layout_constraintBottom_toTopOf="@+id/constraint_player2"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent">
 
         <TextView
-            android:id="@+id/textview_primary_minute"
+            android:id="@+id/textview_player1_minute"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:rotation="180"
@@ -25,11 +25,11 @@
             android:textColor="@color/player1_secondary"
             android:textSize="60sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textview_primary_colon_label"
+            app:layout_constraintStart_toEndOf="@+id/textview_player1_colon_label"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textview_primary_colon_label"
+            android:id="@+id/textview_player1_colon_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:rotation="180"
@@ -43,7 +43,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textview_primary_second"
+            android:id="@+id/textview_player1_second"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:rotation="180"
@@ -51,13 +51,13 @@
             android:textColor="@color/player1_secondary"
             android:textSize="60sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/textview_primary_colon_label"
+            app:layout_constraintEnd_toStartOf="@+id/textview_player1_colon_label"
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraint_secondary"
+        android:id="@+id/constraint_player2"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@color/player2_primary"
@@ -65,21 +65,21 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraint_primary">
+        app:layout_constraintTop_toBottomOf="@+id/constraint_player1">
 
         <TextView
-            android:id="@+id/textview_secondary_minute"
+            android:id="@+id/textview_player2_minute"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/time_minute_default"
             android:textColor="@color/player2_secondary"
             android:textSize="60sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/textview_secondary_colon_label"
+            app:layout_constraintEnd_toStartOf="@+id/textview_player2_colon_label"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textview_secondary_colon_label"
+            android:id="@+id/textview_player2_colon_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/time_colon"
@@ -92,28 +92,21 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textview_secondary_second"
+            android:id="@+id/textview_player2_second"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/time_second_default"
             android:textColor="@color/player2_secondary"
             android:textSize="60sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textview_secondary_colon_label"
+            app:layout_constraintStart_toEndOf="@+id/textview_player2_colon_label"
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <Button
-        android:id="@+id/button_go"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:text="@string/button_go"
-        android:backgroundTint="@color/ternary"
-        android:textColor="@color/white"
-        android:textSize="40sp"
-        app:layout_constraintBottom_toBottomOf="@+id/constraint_secondary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/constraint_primary" />
+    <ImageView
+        android:id="@+id/imageView_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srcCompat="@android:drawable/screen_background_dark_transparent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
