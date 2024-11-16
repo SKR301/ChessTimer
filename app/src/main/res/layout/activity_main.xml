@@ -108,5 +108,6 @@
         android:id="@+id/imageView_overlay"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:srcCompat="@android:drawable/screen_background_dark_transparent" />
+        android:background="@color/dark_transparent"
+        android:contentDescription="@string/imageview_overlay_text" />
 </androidx.constraintlayout.widget.ConstraintLayout>
