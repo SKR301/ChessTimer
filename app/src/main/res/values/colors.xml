@@ -13,5 +13,7 @@
     <color name="dark_transparent">#77000000</color>
     <color name="transparent">#00000000</color>
 
+    <color name="go">#55CF47</color>
+
 
 </resources>

@@ -1,10 +1,9 @@
 <resources>
     <string name="app_name">ChessTimer</string>
-    <string name="time_minute_default">00</string>
+    <string name="time_minute_default">10</string>
     <string name="time_colon">:</string>
-    <string name="time_second_default">10</string>
+    <string name="time_second_default">00</string>
     <string name="button_go">GO</string>
-
-
     <string name="imageview_overlay_text">imageView_overlay</string>
 </resources>
+

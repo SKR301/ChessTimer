@@ -1,9 +1,8 @@
 package com.skrinternationals.chesstimer;
 
-import android.graphics.Color;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,6 +25,9 @@ public class MainActivity extends AppCompatActivity {
 
     CountDownTimer timer1;
     CountDownTimer timer2;
+
+    String player1_time;
+    String player2_time;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,8 +68,8 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onTick(long millis_until_finished) {
-                long minutes = (millis_until_finished / 1000) / 60;
-                long seconds = (millis_until_finished / 1000) % 60;
+                long minutes = (long) (Math.ceil((millis_until_finished / 1000F)) / 60);
+                long seconds = (long) (Math.ceil((millis_until_finished / 1000F)) % 60);
 
                 textview_player1_minute.setText(String.format(Locale.ENGLISH, "%02d", minutes));
                 textview_player1_second.setText(String.format(Locale.ENGLISH, "%02d", seconds));
@@ -75,10 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-//                reset
-                is_running = false;
-                imageView_overlay.setBackgroundColor(ContextCompat.getColor(MainActivity.this, R.color.transparent));
-                Toast.makeText(MainActivity.this, "Time's up", Toast.LENGTH_SHORT).show();
+                reset();
             }
         }.start();
     }
@@ -97,12 +96,15 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-//                reset
-                is_running = false;
-                imageView_overlay.setBackgroundColor(ContextCompat.getColor(MainActivity.this, R.color.transparent));
-                Toast.makeText(MainActivity.this, "Time's up", Toast.LENGTH_SHORT).show();
+                reset();
             }
         }.start();
+    }
+
+    private void reset() {
+        is_running = false;
+        imageView_overlay.setBackgroundColor(ContextCompat.getColor(MainActivity.this, R.color.transparent));
+        Toast.makeText(MainActivity.this, "Time's up", Toast.LENGTH_SHORT).show();
     }
 
     void initialize() {
@@ -111,5 +113,16 @@ public class MainActivity extends AppCompatActivity {
         textview_player2_minute = findViewById(R.id.textview_player2_minute);
         textview_player2_second = findViewById(R.id.textview_player2_second);
         imageView_overlay = findViewById(R.id.imageView_overlay);
+
+        Intent intent_main_activity = getIntent();
+        player1_time = intent_main_activity.getStringExtra("player1_time");
+        player2_time = intent_main_activity.getStringExtra("player2_time");
+
+        if (player1_time == null || player2_time == null) {
+            Intent intent_activity_set_timer = new Intent(MainActivity.this, ActivitySetTimer.class);
+            startActivity(intent_activity_set_timer);
+        }
+        textview_player1_minute.setText(player1_time);
+        textview_player2_minute.setText(player2_time);
     }
 }
